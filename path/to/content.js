@@ -1,0 +1,6 @@
+// ... existing code ...
+const DEBUG_MODE = true; // or false, depending on your preference
+
+if (typeof DEBUG_MODE !== 'undefined' && DEBUG_MODE) {
+    // existing code here...
+}
