@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intentional YouTube</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>Intentional YouTube</h1>
+      <p class="subtitle">Reflect. Intend. Engage.</p>
+    </header>
+    
+    <div class="popup-content">
+      <div id="currentSession" class="session-card hidden">
+        <h2>Current Session</h2>
+        <p><strong>Intention:</strong> <span id="sessionIntention">-</span></p>
+        <p><strong>Duration:</strong> <span id="sessionDuration">-</span></p>
+        <button id="endSessionBtn" class="secondary-button">End Session</button>
+      </div>
+      
+      <div id="noSession" class="no-session">
+        <p>No active session</p>
+        <p class="hint">Open YouTube to start a session</p>
+      </div>
+      
+      <div class="quick-stats">
+        <h3>Your Journey</h3>
+        <div class="stat-item">
+          <span class="stat-label">Total Sessions</span>
+          <span class="stat-value" id="totalSessions">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Avg. Satisfaction</span>
+          <span class="stat-value" id="avgSatisfaction">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Intention Match</span>
+          <span class="stat-value" id="intentionMatch">-</span>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="popup-footer">
+      <button id="openDashboard" class="primary-button">View Dashboard</button>
+      <button id="openSettings" class="secondary-button">Settings</button>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

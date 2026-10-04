@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intentional YouTube - Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <header class="dashboard-header">
+      <h1>Your Reflection Dashboard</h1>
+      <p class="subtitle">Track your journey toward more intentional media consumption</p>
+    </header>
+    
+    <main class="dashboard-content">
+      <!-- Summary Stats -->
+      <section class="stats-section">
+        <div class="stat-card">
+          <h3>Total Sessions</h3>
+          <p class="stat-value" id="totalSessions">0</p>
+          <p class="stat-label">All time</p>
+        </div>
+        <div class="stat-card">
+          <h3>Avg. Session Length</h3>
+          <p class="stat-value" id="avgSessionLength">-</p>
+          <p class="stat-label">Per session</p>
+        </div>
+        <div class="stat-card">
+          <h3>Avg. Satisfaction</h3>
+          <p class="stat-value" id="avgSatisfaction">-</p>
+          <p class="stat-label">Out of 5</p>
+        </div>
+        <div class="stat-card">
+          <h3>Intention Match</h3>
+          <p class="stat-value" id="intentionMatch">-</p>
+          <p class="stat-label">Sessions that matched</p>
+        </div>
+      </section>
+      
+      <!-- Charts Section -->
+      <section class="charts-section">
+        <div class="chart-card">
+          <h3>Satisfaction Over Time</h3>
+          <canvas id="satisfactionChart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Session Length Distribution</h3>
+          <canvas id="sessionLengthChart"></canvas>
+        </div>
+      </section>
+      
+      <!-- Intervention Statistics -->
+      <section class="intervention-stats-section">
+        <h3>Intervention Statistics</h3>
+        <div id="interventionStats">
+          <p>No intervention data yet</p>
+        </div>
+      </section>
+      
+      <!-- Intention Breakdown -->
+      <section class="intention-section">
+        <h3>Your Intentions</h3>
+        <div class="intention-breakdown" id="intentionBreakdown">
+          <p>No session data yet</p>
+        </div>
+      </section>
+      
+      <!-- Reflection Trends -->
+      <section class="reflection-trends-section">
+        <h3>Reflection Trends</h3>
+        <div id="reflectionTrends">
+          <p>No reflection responses yet</p>
+        </div>
+      </section>
+      
+      <!-- Behavioral Pathway Timeline -->
+      <section class="pathway-section">
+        <h3>Behavioral Pathway Timeline</h3>
+        <p class="section-subtitle">Select a session below to see how your attention moved during that session.</p>
+        <div id="pathwayTimeline">
+          <p>No sessions recorded yet</p>
+        </div>
+      </section>
+
+      <!-- Recent Sessions -->
+      <section class="sessions-section">
+        <h3>Recent Sessions</h3>
+        <div class="sessions-list" id="sessionsList">
+          <p>No sessions recorded yet</p>
+        </div>
+      </section>
+      
+      <!-- Actions -->
+      <section class="actions-section">
+        <button id="openSettings" class="secondary-button">Update Settings</button>
+        <button id="clearData" class="danger-button">Clear All Data</button>
+      </section>
+    </main>
+  </div>
+  
+  <script src="dashboard.js"></script>
+</body>
+</html>
