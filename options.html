@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intentional YouTube - Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="options-container">
+    <header class="options-header">
+      <h1>Intentional YouTube</h1>
+      <p class="subtitle">Settings & Preferences</p>
+    </header>
+    
+    <main class="options-content">
+      <!-- Onboarding Section -->
+      <section id="onboardingSection" class="settings-section">
+        <h2>Welcome to Intentional YouTube</h2>
+        <p class="section-description">Let's set up your experience. This helps us provide more relevant reflections.</p>
+        
+        <div class="form-group">
+          <label for="usualPurpose">What is your usual purpose when opening YouTube?</label>
+          <select id="usualPurpose" class="form-select">
+            <option value="">Select an option...</option>
+            <option value="Learning something">Learning something</option>
+            <option value="Watching a specific video">Watching a specific video</option>
+            <option value="Relaxing">Relaxing</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Exploring">Exploring</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>What kind of support would you like?</label>
+          <div class="support-options">
+            <label class="radio-option">
+              <input type="radio" name="supportLevel" value="low">
+              <div class="radio-content">
+                <strong>Low</strong>
+                <p>Occasional reflection prompts</p>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="supportLevel" value="medium" checked>
+              <div class="radio-content">
+                <strong>Medium</strong>
+                <p>Reflection prompts + interface adjustments</p>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="supportLevel" value="high">
+              <div class="radio-content">
+                <strong>High</strong>
+                <p>Stronger reflection + distraction reduction</p>
+              </div>
+            </label>
+          </div>
+        </div>
+        
+        <button id="completeOnboarding" class="primary-button">Get Started</button>
+      </section>
+      
+      <!-- Settings Section (hidden until onboarding complete) -->
+      <section id="settingsSection" class="settings-section hidden">
+        <h2>Your Preferences</h2>
+        
+        <div class="form-group">
+          <label for="reflectionInterval">Reflection interval (minutes)</label>
+          <input type="number" id="reflectionInterval" class="form-input" min="2" max="120" value="15">
+          <p class="form-hint">How often to show check-in prompts during sessions</p>
+        </div>
+        
+        <div class="form-group">
+          <h3>Interface Adjustments</h3>
+          <p class="section-description">Customize your YouTube experience</p>
+          
+          <label class="toggle-option">
+            <input type="checkbox" id="hideShorts">
+            <div class="toggle-content">
+              <strong>Hide Shorts shelf</strong>
+              <p>Remove the Shorts section from the homepage</p>
+            </div>
+          </label>
+          
+          <label class="toggle-option">
+            <input type="checkbox" id="hideHomepageRecs">
+            <div class="toggle-content">
+              <strong>Hide homepage recommendations</strong>
+              <p>Remove recommended videos from the homepage</p>
+            </div>
+          </label>
+          
+          <label class="toggle-option">
+            <input type="checkbox" id="hideSidebarRecs">
+            <div class="toggle-content">
+              <strong>Hide sidebar recommendations</strong>
+              <p>Remove recommended videos from the sidebar</p>
+            </div>
+          </label>
+          
+          <label class="toggle-option">
+            <input type="checkbox" id="disableAutoplay">
+            <div class="toggle-content">
+              <strong>Disable autoplay</strong>
+              <p>Turn off YouTube's autoplay toggle and show a red warning if it gets re-enabled</p>
+            </div>
+          </label>
+          
+          <label class="toggle-option">
+            <input type="checkbox" id="blurThumbnails">
+            <div class="toggle-content">
+              <strong>Blur thumbnails</strong>
+              <p>Blur video thumbnails until hovered (reduces visual distraction)</p>
+            </div>
+          </label>
+        </div>
+        
+        <div class="form-group">
+          <h3>Update Your Purpose</h3>
+          <label for="updatePurpose">Your usual purpose:</label>
+          <select id="updatePurpose" class="form-select">
+            <option value="Find a specific video">Find a specific video</option>
+            <option value="Learn something">Learn something</option>
+            <option value="Relax / Be entertained">Relax / Be entertained</option>
+            <option value="Explore a topic">Explore a topic</option>
+          </select>
+        </div>
+        
+        <button id="saveSettings" class="primary-button">Save Settings</button>
+        <button id="viewDashboard" class="secondary-button">View Dashboard</button>
+      </section>
+    </main>
+    
+    <footer class="options-footer">
+      <p class="footer-text">Your data is stored locally on your device.</p>
+    </footer>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

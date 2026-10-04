@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intentional YouTube — Alignment Engine Verification</title>
+  <style>
+    body { font-family: sans-serif; background: #111; color: #eee; padding: 20px; }
+    pre { background: #222; padding: 16px; border-radius: 8px; white-space: pre-wrap; }
+    .pass { color: #4ade80; }
+    .fail { color: #f87171; }
+  </style>
+</head>
+<body>
+  <h1>Alignment Engine Verification</h1>
+  <p>This page runs the isolated verification script in the browser. Open the console for raw output.</p>
+  <pre id="output">Running...</pre>
+  <p>Exit code: <span id="exit-code">-</span></p>
+
+  <script>
+    // Make the standalone Node script runnable in a browser.
+    if (typeof process === 'undefined') {
+      window.process = { exit: function(code) {
+        document.getElementById('exit-code').textContent = code;
+      }};
+    }
+    var rawOutput = '';
+    var originalLog = console.log;
+    console.log = function() {
+      var line = Array.from(arguments).join(' ');
+      originalLog.apply(console, arguments);
+      rawOutput += line + '\n';
+      var el = document.getElementById('output');
+      if (el) el.textContent = rawOutput;
+    };
+  </script>
+  <script src="verify-alignment.js"></script>
+</body>
+</html>
